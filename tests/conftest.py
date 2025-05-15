@@ -29,7 +29,7 @@ def item_data():
     }
 
 @pytest.fixture
-def test_item(auth_session, item_data):
+def item_id(auth_session, item_data):
     response = auth_session.post(f"{api_config.BASE_URL}/api/v1/items/", json=item_data)
     assert response.status_code in (200, 201), f"Item creation failed: {response.text}"
 
